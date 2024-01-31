@@ -1,0 +1,63 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Miranda",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#function_type_declaration"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.m",
+					"match": "\\|\\|.*"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.m",
+					"match": "\\b(if|otherwise|where)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.m",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.m",
+					"match": "\\\\."
+				}
+			]
+		},
+		"function_type_declaration": {
+			"name": "meta.function.type-declaration.m",
+			"match": "([a-zA-Z_][a-zA-Z0-9_]*)\\s*(::)\\s*(.*)",
+			"captures": {
+				"1": {
+					"name": "entity.name.function"
+				},
+				"2": {
+					"name": "entity.name.tag"
+				},
+				"3": {
+					"name": "entity.name.type"
+				}
+			}
+		}
+	},
+	"scopeName": "source.m"
+}
