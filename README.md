@@ -6,6 +6,7 @@
 - Function declarations & Function type declarations
 - Keywords e.g. `otherwise`
 - Single line comments `||`
+- Can utilise block comments using `||`
 
   
 
